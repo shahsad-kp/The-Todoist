@@ -1,0 +1,79 @@
+@import "../../App.scss";
+
+.sidebar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 1s;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    position: absolute;
+}
+
+.sidebar .sidebar-inner{
+    width: 30%;
+    height: 100%;
+    background-color: $secondary-background;
+    padding: 1rem;
+    gap: 1rem;
+    transition: all 1s;
+    display: none;
+    flex-direction: column;
+}
+
+.sidebar .sidebar-inner.opened{
+    display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+    .sidebar .side-bar-toggle{
+        display: none !important;
+    }
+
+    .sidebar .sidebar-inner{
+        display: flex !important;
+        box-shadow: 0 0 0 0;
+
+    }
+
+    .sidebar{
+        position: relative;
+    }
+}
+
+.sidebar .side-bar-toggle{
+    width: fit-content;
+    height: fit-content;
+    color: $accent;
+    background-color: $secondary-background;
+    padding: 1rem .5rem;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .sidebar-inner .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar .sidebar-inner h2{
+    color: white;
+}
+
+.icon{
+    padding: .5rem;
+    background: $secondary-color;
+    color: $accent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 4px;
+    font-weight: bold;
+}
