@@ -12,17 +12,17 @@ type AddTodo = {
 
 type RemoveTodo = {
     type: string,
-    payload: number
+    payload: string
 }
 
 type MarkTodoCompleted = {
     type: string,
-    payload: number
+    payload: string
 }
 
 type MarkTodoUncompleted = {
     type: string,
-    payload: number
+    payload: string
 }
 
 const todoSlice = createSlice({

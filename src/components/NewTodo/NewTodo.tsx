@@ -4,6 +4,7 @@ import {FaXmark} from "react-icons/fa6";
 import {Todo} from "../../types/Todo.ts";
 import {useDispatch} from "react-redux";
 import {addTodo} from "../../redux/todoSlice/todoSlice.ts";
+import {v4 as uuidV4} from 'uuid';
 
 type Props = {
     closeFunction: () => void;
@@ -32,7 +33,7 @@ export const NewTodo: FC<Props> = ({closeFunction}) => {
     const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const todo: Todo = {
-            id: Math.random(),
+            id: uuidV4(),
             title: todoTitle,
             date: lastDate.toISOString(),
             completed: false,

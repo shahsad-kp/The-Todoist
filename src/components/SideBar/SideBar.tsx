@@ -22,13 +22,12 @@ export const SideBar = () => {
         thisWeek.setDate(thisWeek.getDate() - today.getDay());
         const thisMonth = new Date();
         thisMonth.setDate(1);
-        console.log(today.getTime())
         if (date.getTime() >= today.getTime() && date.getTime() <= (today.getTime() + 24 * 60 * 60 * 1000)) {
             return "Today";
         } else if (date.getTime() >= thisWeek.getTime() && date.getTime() <= (thisWeek.getTime() + 6 * 24 * 60 * 60 * 1000)) {
-            return "This Week";
+            return "This week";
         } else if (date.getTime() >= thisMonth.getTime() && date.getTime() <= (thisMonth.getTime() + 30 * 24 * 60 * 60 * 1000)) {
-            return "This Month";
+            return "This month";
         } else {
             return "Others";
         }
