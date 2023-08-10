@@ -1,0 +1,26 @@
+@import "../../App.scss";
+
+td{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    height: 100px;
+    color: $accent-second;
+}
+
+td.today{
+    color: $primary-color;
+}
+
+td.today hr{
+    border-color: $primary-color;
+}
+
+td hr{
+    width: 100%;
+    border-color: $accent-second;
+    opacity: 0.2;
+}

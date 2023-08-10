@@ -1,7 +1,10 @@
+@import "../../App.scss";
+
 .calendar-body {
-    height: fit-content;
+    height: 100%;
     overflow: auto;
     width: 100%;
+    border-spacing: 0;
 }
 
 .calendar-body tr{

@@ -1,11 +1,13 @@
 @import "../../App.scss";
 @import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
+
+
 .calendar-background{
     width: 100%;
     height: 100%;
     background-color: $background;
-    padding: 2rem 2rem 0 2rem;
-    overflow: clip;
+    padding: 2rem 2rem 2rem 2rem;
+    overflow: auto;
 }
 
 .calendar{
