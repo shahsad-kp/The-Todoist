@@ -48,7 +48,7 @@ export const SideBar = () => {
             convertedTodoGroups.push({title: key, todos: value});
         });
         return convertedTodoGroups;
-    }, [todos])
+    }, [getDateRangeString, todos])
 
     return (<>
         <div className={`sidebar`}>
