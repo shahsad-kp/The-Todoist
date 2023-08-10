@@ -1,0 +1,65 @@
+@import "../../App.scss";
+
+.new-todo-outer{
+    width:  100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-todo{
+    min-width: 25%;
+    background-color: $secondary-background;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    position: relative;
+    padding: 1rem;
+}
+
+.last-date-column{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.last-date-column label{
+    color: $accent;
+    white-space: nowrap;
+}
+
+.new-todo h4{
+    color: $accent
+}
+
+.new-todo form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.new-todo input, .new-todo button[type="submit"]{
+    width: 100%;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    background-color: $secondary-color;
+    border: 0;
+    color: $accent;
+}
+
+.new-todo button[type="submit"]{
+    background-color: $primary-color;
+    color: $secondary-background;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-close-button{
+    position: absolute;
+    top: 10px;
+    right: 10px
+}

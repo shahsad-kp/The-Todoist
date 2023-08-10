@@ -1,10 +1,11 @@
 import './TodoList.scss';
 import {FC, useState} from "react";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
-import {Todo} from "../../types/Todo.ts";
+import {Todo as TodoType} from "../../types/Todo.ts";
+import {Todo} from "../Todo/Todo.tsx";
 
 type Props = {
-    todos: Todo[]
+    todos: TodoType[]
     title: string
 }
 
@@ -23,10 +24,9 @@ export const TodoList: FC<Props> = ({title, todos}) => {
             </button>
         </div>
         {expanded && <div className={"todos"}>
-            <div className={"todo"}>
-                <input type="checkbox"/>
-                <p>Todo 1</p>
-            </div>
+            {
+                todos.map((todo: TodoType) => <Todo todo={todo}/>)
+            }
         </div>}
     </div>);
 };

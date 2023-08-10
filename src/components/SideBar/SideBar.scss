@@ -12,7 +12,8 @@
 }
 
 .sidebar .sidebar-inner{
-    width: 30%;
+    min-width: 30%;
+    width: fit-content;
     height: 100%;
     background-color: $secondary-background;
     padding: 1rem;
