@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 .new-todo{
@@ -17,6 +18,7 @@
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
     position: relative;
     padding: 1rem;
+    z-index: 999;
 }
 
 .last-date-column{
@@ -62,4 +64,10 @@
     position: absolute;
     top: 10px;
     right: 10px
+}
+
+.error{
+    color: red;
+    font-weight: 400;
+    font-size: .7rem;
 }

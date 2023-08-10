@@ -36,7 +36,7 @@ export const SideBar = () => {
     const todoGroups = useMemo(() => {
         const todoGroups = new Map();
         todos.forEach((todo: Todo) => {
-            const type = getDateRangeString(new Date(todo.date));
+            const type = getDateRangeString(new Date(todo.startDate));
             if (todoGroups.has(type)) {
                 todoGroups.get(type).push(todo);
             } else {
