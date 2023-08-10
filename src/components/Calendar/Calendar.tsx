@@ -2,6 +2,7 @@ import './Calendar.scss'
 import {CalendarHead} from "../CalendarHead/CalendarHead.tsx";
 import {useCallback, useMemo, useState} from "react";
 import {WeekDetailsType} from "../../types/WeekDetails.ts";
+import {CalendarBody} from "../CalendarBody/CalendarBody.tsx";
 
 export const Calendar = () => {
     const getDateDetails = useCallback((date: Date) => {
@@ -48,6 +49,7 @@ export const Calendar = () => {
                     weekDetails={weekDetails}
                     getDateDetails={getDateDetails}
                 />
+                <CalendarBody weekdays={weekDays}/>
             </div>
         </div>
     );

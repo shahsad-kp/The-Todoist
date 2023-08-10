@@ -1,0 +1,12 @@
+.calendar-body {
+    height: fit-content;
+    overflow: auto;
+    width: 100%;
+}
+
+.calendar-body tr{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}

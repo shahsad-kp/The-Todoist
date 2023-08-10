@@ -4,7 +4,8 @@
     width: 100%;
     height: 100%;
     background-color: $background;
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
+    overflow: clip;
 }
 
 .calendar{
@@ -23,25 +24,18 @@
     justify-content: space-between;
 }
 
-.calendar div{
-    display: flex;
-    width: fit-content;
-    flex-direction: row;
-    gap: 3rem;
-}
-
-.calendar div div{
+.calendar .head div{
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: center;
 }
 
-.calendar div div svg{
+.calendar .head div svg{
     cursor: pointer;
 }
 
-.calendar div div button{
+.calendar .head div button{
     height: fit-content;
     width: fit-content;
     font-size: medium;

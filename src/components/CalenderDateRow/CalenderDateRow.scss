@@ -1,0 +1,24 @@
+@import "../../App.scss";
+
+th{
+    width: 100%;
+    flex: 1;
+    color: $accent-second;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+th.today{
+    color: $secondary-background
+}
+
+th .date{
+    font-size: 4rem;
+}
+
+th .day{
+    font-size: 1rem;
+    font-weight: 400;
+}
