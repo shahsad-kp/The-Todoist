@@ -36,25 +36,22 @@ export const NewTodo: FC<Props> = ({closeFunction}) => {
 
     const isValidDateFormat = useCallback((dateString: string) => {
         const datePattern = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
-
         if (!datePattern.test(dateString)) {
-            return false; // Doesn't match the expected format
+            return false;
         }
 
         const [day, month, year] = dateString.split('/').map(Number);
         const parsedDate = new Date(year, month - 1, day);
-
         return (parsedDate.getDate() === day && parsedDate.getMonth() === month - 1 && parsedDate.getFullYear() === year);
     }, []);
     const isValidTimeFormat = useCallback((timeString: string) => {
         const timePattern = /^(?:[01]\d|2[0-4]):[0-5]\d$/;
         return timePattern.test(timeString);
     }, []);
+
     const convertStringsToDate = useCallback((dateString: string, timeString: string) => {
         const [day, month, year] = dateString.split('/').map(Number);
         const [hours, minutes] = timeString.split(':').map(Number);
-
-        // Note: Month in JavaScript's Date is 0-indexed (0-January to 11-December)
         const jsMonth = month - 1;
 
         return new Date(year, jsMonth, day, hours, minutes);
@@ -94,8 +91,7 @@ export const NewTodo: FC<Props> = ({closeFunction}) => {
             startDate: startDateObject.toISOString(),
             endDate: endDateObject.toISOString(),
             completed: false,
-        }
-        console.log(todo)
+        };
         dispatcher(addTodo(todo));
         closeFunction();
     }, [todoTitle, isValidDateFormat, startDate, endDate, convertStringsToDate, startTime, endTime, dispatcher, closeFunction]);
