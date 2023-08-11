@@ -22,24 +22,32 @@ export const CalendarTodo: FC<Props> = ({date, amPm, hour}) => {
     if (amPm.toLowerCase() === 'pm') {
         hour += 12;
     }
-    date.setHours(hour)
+    date.setHours(hour, 0, 0, 0);
 
     const activeTodos: ActiveTodo[] = useMemo(() => {
-        if (date.getHours() === 3 && date.getDate() === 4) {
-            return [{
-                title: 'test', startDate: date, endDate: new Date(date.getTime() + 60 * 60 * 1000), status: 'start'
-            }]
-        } else if (date.getHours() === 6  && date.getDate() === 4) {
-            return [{
-                title: 'test', startDate: date, endDate: new Date(date.getTime() + 60 * 60 * 1000), status: 'end'
-            }]
-        } else if ((date.getHours() > 3 && date.getHours() < 6)  && date.getDate() === 4) {
-            return [{
-                title: 'test', startDate: date, endDate: new Date(date.getTime() + 60 * 60 * 1000), status: 'active'
-            }   ]
-        }
-        return [];
-    }, [date]);
+        const filteredTodos = todos.filter(todo => {
+            const startDate = new Date(todo.startDate);
+            startDate.setMinutes(0, 0, 0)
+            const endDate = new Date(todo.endDate);
+            endDate.setMinutes(0, 0, 0)
+            return startDate <= date && endDate >= date;
+        }, []);
+        return filteredTodos.map(todo => {
+            const startDate = new Date(todo.startDate);
+            startDate.setMinutes(0, 0, 0)
+            const endDate = new Date(todo.endDate);
+            endDate.setMinutes(0, 0, 0)
+            if ((startDate.getHours() === date.getHours() && startDate.getDate() === date.getDate())) {
+                return {title: todo.title, startDate, endDate, status: 'start'};
+            }
+            else if ((endDate.getHours() === date.getHours()) && (endDate.getDate() === date.getDate())) {
+                return {title: todo.title, startDate, endDate, status: 'end'};
+            }
+            else{
+                return {title: todo.title, startDate, endDate, status: 'active'};
+            }
+        })
+    }, [date, todos]);
 
     return (<div
         className={'calendar-todo-showing'}
