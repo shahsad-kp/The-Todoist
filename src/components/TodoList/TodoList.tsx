@@ -12,7 +12,12 @@ type Props = {
 export const TodoList: FC<Props> = ({title, todos}) => {
     const [expanded, setExpanded] = useState(false);
 
-    console.log(todos)
+    todos.sort((a, b) => {
+        const aDate = new Date(a.startDate);
+        const bDate = new Date(b.startDate);
+        return aDate < bDate ? -1 : aDate > bDate ? 1 : 0;
+    });
+
     return (<div className={`todo-list ${expanded && 'expanded'}`}>
         <div className={'todo-list-head'}>
             <h3>{title}</h3>
