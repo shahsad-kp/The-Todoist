@@ -62,6 +62,9 @@ export const SideBar = () => {
                         <FaPlus/>
                     </button>
                 </div>
+                {todoGroups.length === 0 && <div className={'empty'}>
+                    <h3>No todos</h3>
+                </div>}
                 {todoGroups.map((todoGroup: TodoGroup) => <TodoList
                     key={todoGroup.title}
                     title={todoGroup.title}
